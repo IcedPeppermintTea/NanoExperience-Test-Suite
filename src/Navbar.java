@@ -8,7 +8,6 @@ Description: Class to test Navigation bar on Nano Experience website
  */
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -19,17 +18,19 @@ public class Navbar {
     // Protected variable to store the webdriver
     protected WebDriver driver;
 
-    // Protected variable to store the executor
-    protected JavascriptExecutor execute;
-
-    // Store website URL in a variable for easy access
+    // Store website URL in a string variable for easy access
     protected String NanoExperienceURL = "https://www.thenanoexperience.com/";
 
     // Set up the webdriver before we start running the class
     @BeforeClass
-    public void setUp() {
+    public void setUp() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "WebDrivers/Chromedriver/chromedriver.exe");
         driver = new ChromeDriver();
+
+        // Open and maximize the Nano Experience page
+        driver.get(NanoExperienceURL);
+        driver.manage().window().maximize();
+        Thread.sleep(3000);
     }
 
     // Close the webdriver after we are done running the class
@@ -40,13 +41,6 @@ public class Navbar {
 
     // ---------------------- Test Functions ------------------------------------
     @Test(priority = 1)
-    void open_browser() throws InterruptedException {
-        driver.get(NanoExperienceURL);
-        driver.manage().window().maximize();
-        Thread.sleep(3000);
-    }
-
-    @Test(priority = 2)
     void url_and_title() throws InterruptedException {
         // Get and print URL of webpage
         String pageURL = driver.getCurrentUrl();
@@ -61,11 +55,74 @@ public class Navbar {
         System.out.println();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     void call_to_action_button_links() throws InterruptedException {
-        // Click on "Arthrex Nano Experience" logo
+        // Click on Arthrex Nano Experience logo
         driver.findElement(By.cssSelector(".logo-container")).click();
         Thread.sleep(2000);
+
+        // Click on Find a Doctor button
+        driver.findElement(By.xpath("/html/body/div/div/div[1]/nav/div[8]/a/div")).click();
+        Thread.sleep(2000);
+
+        // Click on Surgeon Site link
+        driver.findElement(By.linkText("Surgeon Site")).click();
+        Thread.sleep(2000);
+    }
+
+    @Test(priority = 3)
+    void treatment_option_links() throws InterruptedException {
+        // Click to expand Treatment Options menu
+        driver.findElement(By.cssSelector("#w-dropdown-toggle-0 > div.toggle-text")).click();
+        Thread.sleep(2000);
+
+        // Click on Home option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/a[1]")).click();
+        Thread.sleep(2000);
+
+        // Click to expand Treatment Options menu
+        driver.findElement(By.cssSelector("#w-dropdown-toggle-0 > div.toggle-text")).click();
+        Thread.sleep(2000);
+
+        // Click on Why Nano? option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/a[2]")).click();
+        Thread.sleep(2000);
+
+        // Click to expand Treatment Options menu
+        driver.findElement(By.cssSelector("#w-dropdown-toggle-0 > div.toggle-text")).click();
+        Thread.sleep(2000);
+
+        // Click on Where Does it Hurt? option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/div[3]")).click();
+        Thread.sleep(2000);
+
+        // Click on Blog option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/a[3]")).click();
+        Thread.sleep(2000);
+
+        // Click to expand Treatment Options menu
+        driver.findElement(By.cssSelector("#w-dropdown-toggle-0 > div.toggle-text")).click();
+        Thread.sleep(2000);
+
+        // Click on FAQs option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/a[4]")).click();
+        Thread.sleep(2000);
+
+    }
+
+    @Test (priority = 4)
+    void where_does_it_hurt_links() throws InterruptedException {
+
+    }
+
+    @Test (priority = 5)
+    void resource_links() throws InterruptedException {
+
+    }
+
+    @Test (priority = 6)
+    void connect_with_use_links() throws InterruptedException {
+
     }
 
 }
