@@ -1,8 +1,16 @@
+/*
+Authors: Ayleen Roque, Katarya Johnson-William
+Class: Software Testing - CEN 4072 - CRN 10420
+Instructor: Dr. Deepa Devasenapathy
+Date: Spring 2024
+File:
+Description:
+ */
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class NanoExperience
+public class Navbar
 {
     @Test(priority = 1)
     void open_browser()
