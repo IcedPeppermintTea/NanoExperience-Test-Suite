@@ -7,6 +7,7 @@ File: Navbar.java
 Description: Class to test Navigation bar on Nano Experience website
  */
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -42,27 +43,29 @@ public class Navbar {
     void open_browser() throws InterruptedException {
         driver.get(NanoExperienceURL);
         driver.manage().window().maximize();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
 
     @Test(priority = 2)
-    void setup()
-    {
-        System.setProperty("webdriver.chrome.driver", "WebDrivers/Chromedriver/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+    void url_and_title() throws InterruptedException {
+        // Get and print URL of webpage
+        String pageURL = driver.getCurrentUrl();
+        System.out.print("Current Page URL: ");
+        System.out.print(pageURL);
+        System.out.println();
 
-        driver.get("https://www.thenanoexperience.com/");
+        // Get and print title of webpage
         String title = driver.getTitle();
-        System.out.println(title);
-
-        String url_page = driver.getCurrentUrl();
-        System.out.println(url_page);
-        driver.quit();
+        System.out.print("Current Page Title: ");
+        System.out.print(title);
+        System.out.println();
     }
 
-    @Test (priority = 3)
-    void close_browser()
-    {
-        System.out.println("Close the browser");
+    @Test(priority = 3)
+    void call_to_action_button_links() throws InterruptedException {
+        // Click on "Arthrex Nano Experience" logo
+        driver.findElement(By.cssSelector(".logo-container")).click();
+        Thread.sleep(2000);
     }
+
 }
