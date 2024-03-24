@@ -4,12 +4,15 @@ Class: Software Testing - CEN 4072 - CRN 10420
 Instructor: Dr. Deepa Devasenapathy
 Date: Spring 2024
 File: Navbar.java
-Description: Class to test Navigation bar on Nano Experience website
+Description: Class to test the Navigation bar on Nano Experience website.
  */
 
+// Selenium Import Statements
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+// TestNG Import Statements
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
