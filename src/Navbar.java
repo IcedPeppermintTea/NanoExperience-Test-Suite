@@ -7,6 +7,8 @@ File: Navbar.java
 Description: Class to test Navigation bar on Nano Experience website
  */
 
+import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -21,6 +23,7 @@ public class Navbar
     // Set up the webdriver before we start running the class
     @BeforeClass // set up the webdriver before we begin testing
     public void setUp() {
+
         System.setProperty("webdriver.chrome.driver", "WebDrivers/Chromedriver/chromedriver.exe");
         driver = new ChromeDriver();
     }
@@ -28,7 +31,7 @@ public class Navbar
     // Close the webdriver after we are done running the class
     @AfterClass // close the driver after we are done testing
     public void close() {
-        driver.close();
+        driver.quit();
     }
 
     // ---------------------- Test Functions ------------------------------------
