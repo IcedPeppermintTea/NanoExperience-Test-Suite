@@ -7,7 +7,7 @@ File: Navbar.java
 Description: Class to test Navigation bar on Nano Experience website
  */
 
-import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,50 +15,56 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Navbar
-{
-    // Variable to store the webdriver
+public class Navbar {
+    // Protected variable to store the webdriver
     protected WebDriver driver;
 
-    // Set up the webdriver before we start running the class
-    @BeforeClass // set up the webdriver before we begin testing
-    public void setUp() {
+    // Protected variable to store the executor
+    protected JavascriptExecutor execute;
 
+    // Store website URL in a variable for easy access
+    protected String NanoExperienceURL = "https://www.thenanoexperience.com/";
+
+    // Set up the webdriver before we start running the class
+    @BeforeClass
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver", "WebDrivers/Chromedriver/chromedriver.exe");
         driver = new ChromeDriver();
     }
 
     // Close the webdriver after we are done running the class
-    @AfterClass // close the driver after we are done testing
+    @AfterClass
     public void close() {
         driver.quit();
     }
 
     // ---------------------- Test Functions ------------------------------------
     @Test(priority = 1)
-    void open_browser()
-    {
-        System.out.println("This is opening of a browser");
+    void open_browser() throws InterruptedException {
+        driver.get(NanoExperienceURL);
+        driver.manage().window().maximize();
+        Thread.sleep(3000);
     }
 
     @Test(priority = 2)
-    void setup()
-    {
-        System.setProperty("webdriver.chrome.driver", "WebDrivers/Chromedriver/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+    void url_and_title() throws InterruptedException {
+        // Get and print URL of webpage
+        String pageURL = driver.getCurrentUrl();
+        System.out.print("Current Page URL: ");
+        System.out.print(pageURL);
+        System.out.println();
 
-        driver.get("https://www.thenanoexperience.com/");
+        // Get and print title of webpage
         String title = driver.getTitle();
-        System.out.println(title);
-
-        String url_page = driver.getCurrentUrl();
-        System.out.println(url_page);
-        driver.quit();
+        System.out.print("Current Page Title: ");
+        System.out.print(title);
+        System.out.println();
     }
 
-    @Test (priority = 3)
-    void close_browser()
-    {
-        System.out.println("Close the browser");
+    @Test(priority = 3)
+    void call_to_action_button_links() throws InterruptedException {
+        // Click on "Arthrex Nano Experience" logo
+        driver.findElement(By.cssSelector(".logo-container")).click();
+        Thread.sleep(2000);
     }
 }
