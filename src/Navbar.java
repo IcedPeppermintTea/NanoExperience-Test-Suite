@@ -110,12 +110,57 @@ public class Navbar {
         // Click on FAQs option
         driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/a[4]")).click();
         Thread.sleep(2000);
-
     }
 
     @Test (priority = 4)
     void where_does_it_hurt_links() throws InterruptedException {
+        // Click to expand Treatment Options menu
+        driver.findElement(By.cssSelector("#w-dropdown-toggle-0 > div.toggle-text")).click();
+        Thread.sleep(2000);
 
+        // Click on Where Does it Hurt? option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/div[3]")).click();
+        Thread.sleep(2000);
+
+        // Click on Shoulder & Elbow option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-1\']/div/a[1]")).click();
+        Thread.sleep(2000);
+
+        // Click to expand Treatment Options menu
+        driver.findElement(By.cssSelector("#w-dropdown-toggle-0 > div.toggle-text")).click();
+        Thread.sleep(2000);
+
+        // Click on Where Does it Hurt? option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/div[3]")).click();
+        Thread.sleep(2000);
+
+        // Click on Foot & Ankle option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-1\']/div/a[2]")).click();
+        Thread.sleep(2000);
+
+        // Click to expand Treatment Options menu
+        driver.findElement(By.cssSelector("#w-dropdown-toggle-0 > div.toggle-text")).click();
+        Thread.sleep(2000);
+
+        // Click on Where Does it Hurt? option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/div[3]")).click();
+        Thread.sleep(2000);
+
+        // Click on Knee & Hip option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-1\']/div/a[3]")).click();
+        Thread.sleep(2000);
+
+        // Click to expand Treatment Options menu
+        driver.findElement(By.cssSelector("#w-dropdown-toggle-0 > div.toggle-text")).click();
+        Thread.sleep(2000);
+
+        // Click on Where Does it Hurt? option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/div[3]")).click();
+        Thread.sleep(2000);
+
+        // Click on Hand & Wrist option
+        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-1\']/div/a[4]")).click();
+        Thread.sleep(2000);
     }
 
     @Test (priority = 5)
