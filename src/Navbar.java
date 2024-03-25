@@ -44,7 +44,7 @@ public class Navbar {
 
     // ---------------------- Test Functions ------------------------------------
     @Test(priority = 1)
-    void url_and_title() throws InterruptedException {
+    void url_and_title() {
         // Get and print URL of webpage
         String pageURL = driver.getCurrentUrl();
         System.out.print("Current Page URL: ");
@@ -80,7 +80,7 @@ public class Navbar {
         Thread.sleep(2000);
 
         // Click on Home option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/a[1]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-0']/div/a[1]")).click();
         Thread.sleep(2000);
 
         // Click to expand Treatment Options menu
@@ -88,7 +88,7 @@ public class Navbar {
         Thread.sleep(2000);
 
         // Click on Why Nano? option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/a[2]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-0']/div/a[2]")).click();
         Thread.sleep(2000);
 
         // Click to expand Treatment Options menu
@@ -96,11 +96,11 @@ public class Navbar {
         Thread.sleep(2000);
 
         // Click on Where Does it Hurt? option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/div[3]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-0']/div/div[3]")).click();
         Thread.sleep(2000);
 
         // Click on Blog option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/a[3]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-0']/div/a[3]")).click();
         Thread.sleep(2000);
 
         // Click to expand Treatment Options menu
@@ -108,7 +108,7 @@ public class Navbar {
         Thread.sleep(2000);
 
         // Click on FAQs option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/a[4]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-0']/div/a[4]")).click();
         Thread.sleep(2000);
     }
 
@@ -119,11 +119,11 @@ public class Navbar {
         Thread.sleep(2000);
 
         // Click on Where Does it Hurt? option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/div[3]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-0']/div/div[3]")).click();
         Thread.sleep(2000);
 
         // Click on Shoulder & Elbow option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-1\']/div/a[1]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-1']/div/a[1]")).click();
         Thread.sleep(2000);
 
         // Click to expand Treatment Options menu
@@ -131,11 +131,11 @@ public class Navbar {
         Thread.sleep(2000);
 
         // Click on Where Does it Hurt? option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/div[3]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-0']/div/div[3]")).click();
         Thread.sleep(2000);
 
         // Click on Foot & Ankle option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-1\']/div/a[2]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-1']/div/a[2]")).click();
         Thread.sleep(2000);
 
         // Click to expand Treatment Options menu
@@ -143,11 +143,11 @@ public class Navbar {
         Thread.sleep(2000);
 
         // Click on Where Does it Hurt? option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/div[3]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-0']/div/div[3]")).click();
         Thread.sleep(2000);
 
         // Click on Knee & Hip option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-1\']/div/a[3]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-1']/div/a[3]")).click();
         Thread.sleep(2000);
 
         // Click to expand Treatment Options menu
@@ -155,11 +155,11 @@ public class Navbar {
         Thread.sleep(2000);
 
         // Click on Where Does it Hurt? option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-0\']/div/div[3]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-0']/div/div[3]")).click();
         Thread.sleep(2000);
 
         // Click on Hand & Wrist option
-        driver.findElement(By.xpath("//*[@id=\'w-dropdown-list-1\']/div/a[4]")).click();
+        driver.findElement(By.xpath("//*[@id='w-dropdown-list-1']/div/a[4]")).click();
         Thread.sleep(2000);
     }
 
